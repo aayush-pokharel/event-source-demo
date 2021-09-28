@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AzureFunctionsVersion>v3</AzureFunctionsVersion>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>event_sourcing_demo.web.presistence.azure.functions</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Startup.cs~RF2ebc54a7.TMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.21.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.ServiceBus" Version="4.3.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.13" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\event-sourcing-demo.cart.core\event-sourcing-demo.cart.core.csproj" />
+    <ProjectReference Include="..\event-sourcing-demo.cart.domain\event-sourcing-demo.cart.domain.csproj" />
+    <ProjectReference Include="..\event-sourcing-demo.web.core\event-sourcing-demo.web.core.csproj" />
+    <ProjectReference Include="..\event-sourcing-demo.web.presistence.azure\event-sourcing-demo.web.presistence.azure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Functions\" />
+  </ItemGroup>
+</Project>

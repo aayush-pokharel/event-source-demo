@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>event_sourcing_demo.web.presistence.azure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.21.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\event-sourcing-demo.presistence.azure\event-sourcing-demo.presistence.azure.csproj" />
+    <ProjectReference Include="..\event-sourcing-demo.web.core\event-sourcing-demo.web.core.csproj" />
+  </ItemGroup>
+
+</Project>

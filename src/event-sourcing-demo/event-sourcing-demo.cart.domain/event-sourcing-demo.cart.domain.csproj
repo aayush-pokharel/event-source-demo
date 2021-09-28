@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>event_sourcing_demo.cart.domain</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\event-sourcing-demo.cart.core\event-sourcing-demo.cart.core.csproj" />
+  </ItemGroup>
+
+</Project>
