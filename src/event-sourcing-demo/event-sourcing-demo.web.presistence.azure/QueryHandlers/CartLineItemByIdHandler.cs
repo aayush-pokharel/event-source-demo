@@ -21,7 +21,7 @@ namespace event_sourcing_demo.web.presistence.azure.QueryHandlers
             if (containerProvider == null)
                 throw new ArgumentNullException(nameof(containerProvider));
 
-            _container = containerProvider.GetContainer("CartLineItems");
+            _container = containerProvider.GetContainer("CartLineItemDetails");
         }
 
         public async Task<CartLineItemDetails> Handle(CartLineItemById request, CancellationToken cancellationToken)

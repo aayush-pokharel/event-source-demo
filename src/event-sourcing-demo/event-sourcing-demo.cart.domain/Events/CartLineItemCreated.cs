@@ -22,5 +22,6 @@ namespace event_sourcing_demo.cart.domain.Events
         public Guid CartId { get; private set; }
         public Guid ProductId { get; set; }
         public int Quantity { get; set; }
+        public Money TotalAmount { get; set; }
     }
 }
