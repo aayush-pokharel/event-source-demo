@@ -106,6 +106,8 @@ namespace event_sourcing_demo.web.presistence.azure.functions.EventHandlers
             var updatedCart = new CartDetails(cart.Id, cart.ShopName, cart.CartLineItems, newBalance);
 
             await _cartContainer.ReplaceItemAsync(updatedCart, @event.Event.CartId.ToString(), partitionKey, null, cancellationToken);
+
+            _logger.LogInformation($"updated cart detail line items {@event.Event.AggregateId}");
         }
 
         public async Task Handle(EventReceived<CartLineItemQuantityRemoved> @event, CancellationToken cancellationToken)
@@ -131,6 +133,8 @@ namespace event_sourcing_demo.web.presistence.azure.functions.EventHandlers
             var updatedCart = new CartDetails(cart.Id, cart.ShopName, cart.CartLineItems, newBalance);
 
             await _cartContainer.ReplaceItemAsync(updatedCart, @event.Event.CartId.ToString(), partitionKey, null, cancellationToken);
+
+            _logger.LogInformation($"updated cart detail line items {@event.Event.AggregateId}");
         }
     }
 }

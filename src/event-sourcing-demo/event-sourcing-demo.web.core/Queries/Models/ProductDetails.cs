@@ -12,12 +12,12 @@ namespace event_sourcing_demo.web.core.Queries.Models
         public int Stock { get; private set; }
         public Money Price { get; private set; }
 
-        public ProductDetails(Guid id, string name, int stock, decimal price, Currency currency)
+        public ProductDetails(Guid id, string name, int stock, Money price)
         {
             Id = id;
             Stock = stock;
             Name = name;
-            Price = new Money(currency, price);
+            Price = price;
         }
     }
 }

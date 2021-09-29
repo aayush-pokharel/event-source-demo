@@ -59,7 +59,7 @@ namespace event_sourcing_demo.web.presistence.azure.functions.EventHandlers
 
         public async Task Handle(EventReceived<CartLineItemQuantityAdded> @event, CancellationToken cancellationToken)
         {
-            _logger.LogInformation("creating cart line item details for aggregate {AggregateId} ...", @event.Event.AggregateId);
+            _logger.LogInformation("adding quantity for cart line item details for aggregate {AggregateId} ...", @event.Event.AggregateId);
 
             var productId = @event.Event.ProductId;
             var productResponse = await _productContainer.ReadItemAsync<ProductDetails>(productId.ToString(),
@@ -92,12 +92,12 @@ namespace event_sourcing_demo.web.presistence.azure.functions.EventHandlers
                 new PartitionKey(@event.Event.AggregateId.ToString()),
                 null, cancellationToken);
 
-            _logger.LogInformation("created cart line item {AggregateId}", @event.Event.AggregateId);
+            _logger.LogInformation("added quantity cart line item {AggregateId}", @event.Event.AggregateId);
         }
 
         public async Task Handle(EventReceived<CartLineItemQuantityRemoved> @event, CancellationToken cancellationToken)
         {
-            _logger.LogInformation("creating cart line item details for aggregate {AggregateId} ...", @event.Event.AggregateId);
+            _logger.LogInformation("removing quantity cart line item details for aggregate {AggregateId} ...", @event.Event.AggregateId);
 
             var productId = @event.Event.ProductId;
             var productResponse = await _productContainer.ReadItemAsync<ProductDetails>(productId.ToString(),
@@ -134,7 +134,7 @@ namespace event_sourcing_demo.web.presistence.azure.functions.EventHandlers
                 new PartitionKey(@event.Event.AggregateId.ToString()),
                 null, cancellationToken);
 
-            _logger.LogInformation("created cart line item {AggregateId}", @event.Event.AggregateId);
+            _logger.LogInformation("removed quantity cart line item {AggregateId}", @event.Event.AggregateId);
         }
     }
 }
