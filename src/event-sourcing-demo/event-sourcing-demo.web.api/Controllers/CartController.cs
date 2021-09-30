@@ -39,7 +39,7 @@ namespace event_sourcing_demo.web.api.Controllers
             var command = new CreateCart(Guid.NewGuid(), dto.ShopName);
             await _mediator.Publish(command, cancellationToken);
 
-            return CreatedAtAction("Cart", new { id = command.CartId }, command);
+            return CreatedAtAction("GetCart", new { id = command.CartId }, command);
         }
 
         [HttpPost, Route("{id:guid}/cartLineItems")]
@@ -49,7 +49,7 @@ namespace event_sourcing_demo.web.api.Controllers
                 return BadRequest();
             var command = new CreateCartLineItem(Guid.NewGuid(), id, dto.ProductId, dto.Quantity);
             await _mediator.Publish(command, cancellationToken);
-            return CreatedAtAction("GetCart", "Cart", new { id = command.LineItemId }, command);
+            return CreatedAtAction("GetCartLineItem", "CartLineItem", new { id = command.LineItemId }, command);
         }
     }
 }

@@ -1,0 +1,8 @@
+{
+    "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "AzureWebJobsServiceBus": "Endpoint=sb://aayush-test-service.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=c1lC+Cz3ULUxUnrPiwYBUa0C7/XQfCDN7qVj6qynxoQ="
+  }
+}

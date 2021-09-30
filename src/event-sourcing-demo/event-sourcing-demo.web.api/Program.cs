@@ -22,7 +22,7 @@ namespace event_sourcing_demo.web.api
 #endif
 
 #if OnAzure
-                    builder.AddJsonFile($"appsettings.OnAzure-{ctx.HostingEnvironment.EnvironmentName}.json", optional: true);
+                    builder.AddJsonFile($"appsettings.json", optional: true);
 #endif
 
                     builder.AddEnvironmentVariables()

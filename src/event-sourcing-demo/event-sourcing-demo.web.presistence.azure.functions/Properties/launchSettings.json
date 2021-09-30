@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "event-sourcing-demo.web.presistence.azure.functions": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "cosmos": "AccountEndpoint=https://event-sourciung-demo.documents.azure.com:443/;AccountKey=3mgr57GhBzxXpM0z8oLefAQ6qF6p2tFCJmfLyyHH8wtw6jYX4PoZ43Z6NDlIpZiFATpQCEeaxLALbuo0HOssxw==;",
+        "cosmosDbName": "event-sourcing-db"
+      }
+    }
+  }
+}

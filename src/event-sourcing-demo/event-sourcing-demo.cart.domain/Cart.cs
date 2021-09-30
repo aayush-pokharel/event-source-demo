@@ -9,6 +9,10 @@ namespace event_sourcing_demo.cart.domain
 {
     public class Cart : BaseAggregateRoot<Cart, Guid>
     {
+        private Cart()
+        {
+
+        }
         public Cart(Guid id, string shopName) : base(id)
         {
             if (string.IsNullOrWhiteSpace(shopName))
