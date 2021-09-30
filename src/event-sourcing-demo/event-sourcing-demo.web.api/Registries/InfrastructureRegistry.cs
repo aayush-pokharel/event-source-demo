@@ -38,6 +38,16 @@ namespace event_sourcing_demo.web.api.Registries
                     .RegisterHandlers(typeof(IRequestHandler<>))
                     .RegisterHandlers(typeof(IRequestHandler<,>))
                     .RegisterHandlers(typeof(INotificationHandler<>));
+
+                scan.FromAssembliesOf(typeof(CartLineItemsEventsHandler))
+                    .RegisterHandlers(typeof(IRequestHandler<>))
+                    .RegisterHandlers(typeof(IRequestHandler<,>))
+                    .RegisterHandlers(typeof(INotificationHandler<>));
+
+                scan.FromAssembliesOf(typeof(ProductsEventHandler))
+                    .RegisterHandlers(typeof(IRequestHandler<>))
+                    .RegisterHandlers(typeof(IRequestHandler<,>))
+                    .RegisterHandlers(typeof(INotificationHandler<>));
             });
 #endif
             return services

@@ -10,7 +10,6 @@ namespace event_sourcing_demo.web.api.DTO
     {
         public string Name { get; set; }
         public int Stock { get; private set; }
-        public Money Price { get; private set; }
-        public Currency Currency { get; private set; }
+        public decimal Price { get; private set; }
     }
 }

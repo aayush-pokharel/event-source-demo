@@ -36,10 +36,10 @@ namespace event_sourcing_demo.web.api.Controllers
         {
             if (null == dto)
                 return BadRequest();
-            var command = new CreateProduct(Guid.NewGuid(), dto.Name, dto.Stock, dto.Price);
+            var command = new CreateProduct(Guid.NewGuid(), dto.Name, dto.Stock, new cart.domain.Money(cart.domain.Currency.USDollar, dto.Price));
             await _mediator.Publish(command, cancellationToken);
 
-            return CreatedAtAction("Cart", new { id = command.ProductId }, command);
+            return CreatedAtAction("GetProduct", new { id = command.ProductId }, command);
         }
     }
 }

@@ -54,6 +54,26 @@ namespace event_sourcing_demo.web.api
                     .RegisterHandlers(typeof(IRequestHandler<>))
                     .RegisterHandlers(typeof(IRequestHandler<,>))
                     .RegisterHandlers(typeof(INotificationHandler<>));
+
+                scan.FromAssembliesOf(typeof(CreateProduct))
+                    .RegisterHandlers(typeof(IRequestHandler<>))
+                    .RegisterHandlers(typeof(IRequestHandler<,>))
+                    .RegisterHandlers(typeof(INotificationHandler<>));
+
+                scan.FromAssembliesOf(typeof(CreateCartLineItem))
+                    .RegisterHandlers(typeof(IRequestHandler<>))
+                    .RegisterHandlers(typeof(IRequestHandler<,>))
+                    .RegisterHandlers(typeof(INotificationHandler<>));
+
+                scan.FromAssembliesOf(typeof(AddCartLineItemQuantity))
+                    .RegisterHandlers(typeof(IRequestHandler<>))
+                    .RegisterHandlers(typeof(IRequestHandler<,>))
+                    .RegisterHandlers(typeof(INotificationHandler<>));
+
+                scan.FromAssembliesOf(typeof(RemoveCartLineItemQuantity))
+                    .RegisterHandlers(typeof(IRequestHandler<>))
+                    .RegisterHandlers(typeof(IRequestHandler<,>))
+                    .RegisterHandlers(typeof(INotificationHandler<>));
             });
 
             services.Decorate(typeof(INotificationHandler<>), typeof(RetryDecorator<>));
