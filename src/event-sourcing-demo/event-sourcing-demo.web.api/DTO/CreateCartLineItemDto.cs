@@ -7,6 +7,7 @@ namespace event_sourcing_demo.web.api.DTO
 {
     public class CreateCartLineItemDto
     {
+        public Guid ProductId { get; set; }
         public int Quantity { get; set; }
     }
 }

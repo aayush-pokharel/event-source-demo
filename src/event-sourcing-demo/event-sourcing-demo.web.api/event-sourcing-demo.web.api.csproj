@@ -28,5 +28,11 @@
     <PackageReference Include="scrutor" Version="3.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\event-sourcing-demo.cart.domain\event-sourcing-demo.cart.domain.csproj" />
+    <ProjectReference Include="..\event-sourcing-demo.web.core\event-sourcing-demo.web.core.csproj" />
+    <ProjectReference Include="..\event-sourcing-demo.web.presistence.azure.functions\event-sourcing-demo.web.presistence.azure.functions.csproj" />
+  </ItemGroup>
+
 
 </Project>

@@ -13,11 +13,11 @@ namespace event_sourcing_demo.cart.domain
         public Money Price { get; set; }
 
         private Product() { }
-        public Product(Guid id, string name, int stock, decimal price, Currency currency) : base(id)
+        public Product(Guid id, string name, int stock, Money price) : base(id)
         {
             Stock = stock;
             Name = name;
-            Price = new Money(currency, price);
+            Price = price;
         }
         public void BuyProduct(int quantity)
         {
